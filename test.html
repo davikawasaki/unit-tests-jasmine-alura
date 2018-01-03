@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit Tests with Jasmine</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function MaiorOuMenor() {
+            var menor;
+            var maior;
+            var clazz = {
+                find: function(nums) {
+                    menor = Number.MAX_VALUE;
+                    maior = Number.MIN_VALUE;
+                    nums.forEach(function(num) {
+                        if(num < menor) menor = num;
+                        if(num > maior) maior = num;
+                    });
+                },
+                getSmaller: function() { return menor; },
+                getBigger: function() { return maior; }
+            };
+
+            return clazz;
+        };
+
+        var algorithm = new MaiorOuMenor();
+        algorithm.find([7,6,5,4]);
+        console.log(`Número maior: ${algorithm.getBigger() == 7}`);
+        console.log(`Número menor: ${algorithm.getSmaller() == 4}`);
+    </script>
+</body>
+</html>
