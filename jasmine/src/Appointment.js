@@ -1,4 +1,4 @@
-function Appointment(patient, proceedings, private, recurrence) {
+function Appointment(patient, proceedings, private, recurrence, date) {
 
     var clazz = {
         price : function() {
@@ -14,7 +14,13 @@ function Appointment(patient, proceedings, private, recurrence) {
             if(private) finalPrice *= 2;
 
             return finalPrice;
-        }
+        },
+
+        getPatient : function() { return patient; },
+        getProceedings : function() { return proceedings; },
+        isPrivate : function() { return private; },
+        isRecurrence: function() { return recurrence; },
+        getDate : function() { return date; }
     };
 
     return clazz;
